@@ -1,0 +1,13 @@
+<p>cart works!</p>
+<!-- {{items}} -->
+<ul class="list1">
+    <li *ngFor="let item of items; let i=index" [ngStyle]="{'background-color':i%2===0?'yellow':'green'}">{{item}}</li>
+</ul>
+
+<hr>
+<div>
+    <span><input type="text" [(ngModel)]="newItem"></span>
+    <button class="btn" [ngClass]="{'btn-primary':newItem!=='', 'btn-default':newItem===''}" (click)="onAddItem()">
+        Add Item</button>
+</div>
+<p *ngIf="newItem===''">Please enter a value</p>
